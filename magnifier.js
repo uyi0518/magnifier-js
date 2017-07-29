@@ -10,7 +10,8 @@
           var defaults = {
               s_magnifier_width: "200px",
               s_magnifier_height: "200px",
-              s_magnifier_background_color: "rgba(0,0,0,0.5)"
+              s_magnifier_background_color: "rgba(0,0,0,0.5)",
+              b_magnifier_left: _width + "px"
           }
           options = $.extend({}, defaults, options)
           var b_width = parseInt(options.s_magnifier_width) * 2 + "px" //大盒子
@@ -31,7 +32,7 @@
               s_magnifier.css({ "width": options.s_magnifier_width, "height": options.s_magnifier_height, "background-color": options.s_magnifier_background_color, "position": "absolute", "display": "none", "top": "0" })
               _this.append(s_magnifier)
               b_magnifier = $("<div></div>")
-              b_magnifier.css({ "width": b_width, "height": b_height, "background-color": options.s_magnifier_background_color, "position": "absolute", "display": "none", "overflow": "hidden", "left": _width + "px", "top": "0" })
+              b_magnifier.css({ "width": b_width, "height": b_height, "background-color": options.s_magnifier_background_color, "position": "absolute", "display": "none", "overflow": "hidden", "left": options.b_magnifier_left, "top": "0" })
               _this.append(b_magnifier)
               b_img = $("<img>")
               b_img.attr("src", img_src)
